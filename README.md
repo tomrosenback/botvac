@@ -4,7 +4,7 @@ This is an unofficial API client which can help you
 to interact with the Neato cloudservices which are
 used to control you Neato Connected vacuum robot.
 
-Thanks to Lars Brillert who reverse engineered the Neato API from which this library is ported from.
+Thanks to [Lars Brillert @kangguru](https://github.com/kangguru) who reverse engineered the Neato API from which this library is ported from. Port is based on https://github.com/kangguru/botvac
 
 ## Disclaimer
 

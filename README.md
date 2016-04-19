@@ -8,9 +8,8 @@ Thanks to [Lars Brillert @kangguru](https://github.com/kangguru) who reverse eng
 
 ## Disclaimer
 
-As this is an official client to the API which required
-to reverse (by Lars Brillert) the HTTP Authentication mechanism used by
-Neato things are topic to be unstable and maybe unreliable.
+As this is an unofficial client to the Neato API which required
+to be reverse engineered (by Lars Brillert) things are topic to be unstable and maybe unreliable.
 
 Please don't blame me :) Just drink a beer and relax, things
 will maybe work out in the future ... and maybe not.

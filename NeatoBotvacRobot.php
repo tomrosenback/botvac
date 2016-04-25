@@ -29,9 +29,18 @@ class NeatoBotvacRobot {
 		$params = array("category" => 2, "mode" => ($eco ? 1 : 2), "modifier" => 2);
 		return $this->doAction("startCleaning", $params);
 	}
+	
+	public function startEcoCleaning() {
+		$params = array("category" => 2, "mode" => 1, "modifier" => 2);
+		return $this->doAction("startCleaning", $params);
+	}
 
 	public function pauseCleaning() {
 		return $this->doAction("pauseCleaning");
+	}
+	
+	public function resumeCleaning() {
+		return $this->doAction("resumeCleaning");
 	}
 
 	public function stopCleaning() {

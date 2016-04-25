@@ -17,10 +17,11 @@ will maybe work out in the future ... and maybe not.
 ## Usage
 Check the examples to get a hint on how to use the library, most is self explanatory.
 
-Currently the following methods are available in the NeatoBotvacRobot class (none of them take any parameter):
+Currently the following methods are available in the NeatoBotvacRobot class (some of them takes parameter(s) but have safe defaults):
 
 * getRobotState
 * startCleaning
+* startEcoCleaning
 * pauseCleaning
 * stopCleaning
 * sendToBase

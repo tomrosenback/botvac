@@ -10,6 +10,10 @@
     }
   ],
   "autoload": {
-    "psr-4": {"neato-botvac\\": "src/"}
+    "classmap": [
+      "src/NeatoBotvacApi.php",
+      "src/NeatoBotvacClient.php",
+      "src/NeatoBotvacRobot.php"
+    ]
   }
 }

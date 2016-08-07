@@ -8,5 +8,8 @@
       "name": "Tõnis Tobre",
       "email": "tobre@bitweb.ee"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {"neato-botvac\\": "src/"}
+  }
 }

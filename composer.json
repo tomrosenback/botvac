@@ -1,0 +1,19 @@
+{
+  "name": "tobre6/neato-botvac",
+  "description": "PHP API for Neato Botvac robot vacuum cleaner",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tõnis Tobre",
+      "email": "tobre@bitweb.ee"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/NeatoBotvacApi.php",
+      "src/NeatoBotvacClient.php",
+      "src/NeatoBotvacRobot.php"
+    ]
+  }
+}

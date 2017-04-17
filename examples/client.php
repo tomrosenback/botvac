@@ -23,7 +23,7 @@ if($auth !== false) {
 
 	if($result !== false) {
 		foreach ($result["robots"] as $robot) {
-			$robots[] = new NeatoBotvacRobot($robot["serial"], $robot["secret_key"]);
+			$robots[] = new NeatoBotvacRobot($robot["serial"], $robot["secret_key"], $robot["model"] );
 		}
 	}
 } else {

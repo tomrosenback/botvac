@@ -15,8 +15,15 @@ class NeatoBotvacClient {
 	protected $baseUrl = "https://beehive.neatocloud.com";
 	public $token;
 
-	public function __construct($token = false) {
+	public function __construct($token = false, $vendor="neato") {
 		$this->token = $token;
+
+		switch ($vendor) {
+
+			case "vorwerk":
+						$this->baseUrl = "https://vorwerk-beehive-production.herokuapp.com";
+						break;
+		}
 	}
 
 	public function authorize($email, $password, $force = false) {

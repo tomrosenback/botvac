@@ -16,9 +16,14 @@ class NeatoBotvacRobot {
 	protected $serial;
 	protected $secret;
 
-	public function __construct($serial, $secret) {
+	public function __construct($serial, $secret, $model = "default" ) {
 		$this->serial = $serial;
 		$this->secret = $secret;
+
+		if ($model == "VR200") {
+
+			$this->baseUrl = "https://nucleo.ksecosys.com:4443/vendors/vorwerk/robots/";
+		}
 	}
 
 	public function getState() {

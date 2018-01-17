@@ -67,6 +67,11 @@ class NeatoBotvacRobot {
 	public function getSchedule() {
 		return $this->doAction("getSchedule");
 	}
+	
+	public function setSchedule($events = false) {
+		$params = array("type" => 1, "events" => $events);
+		return $this->doAction("setSchedule", $params);
+	}
 
 	protected function doAction($command, $params = false) {
 		$result = array("message" => "no serial or secret");

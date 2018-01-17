@@ -77,7 +77,7 @@ class NeatoBotvacRobot {
 		$result = array("message" => "no serial or secret");
 
 		if($this->serial !== false && $this->secret !== false) {
-			$payload = array("reqId" => "1", "cmd" => $command);
+			$payload = array("reqId" => "77", "cmd" => $command);
 
 			if($params !== false) {
 				$payload["params"] = $params;

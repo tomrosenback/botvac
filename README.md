@@ -28,6 +28,7 @@ Currently the following methods are available in the NeatoBotvacRobot class (som
 * disableSchedule
 * getSchedule
 * setSchedule
+* setName
 
 The method names should give you an idea what the specific action will
 cause. Still this is not all, but that's what is available for the moment.

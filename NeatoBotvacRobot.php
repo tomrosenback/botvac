@@ -13,6 +13,7 @@ require_once("NeatoBotvacApi.php");
 
 class NeatoBotvacRobot {
 	protected $baseUrl = "https://nucleo.neatocloud.com/vendors/neato/robots/";
+	protected $metaUrl;
 	protected $serial;
 	protected $secret;
 
@@ -23,6 +24,7 @@ class NeatoBotvacRobot {
 		if ($model == "VR200") {
 
 			$this->baseUrl = "https://nucleo.ksecosys.com:4443/vendors/vorwerk/robots/";
+			$this->metaUrl = "https://beehive.ksecosys.com/robots/";
 		}
 	}
 
@@ -67,6 +69,12 @@ class NeatoBotvacRobot {
 		$params = array("type" => 1, "events" => $events);
 		return $this->doAction("setSchedule", $params);
 	}
+	
+	public function setName($name = false, $token = false) {
+		$params = array("name" => $name);
+		return $this->doMeta($params, $token);
+	}
+	
 
 	protected function doAction($command, $params = false) {
 		$result = array("message" => "no serial or secret");
@@ -87,12 +95,26 @@ class NeatoBotvacRobot {
 	    	"Date: ".$date,
 	    	"Authorization: NEATOAPP ".$hmac
 			);
-
-			$result = NeatoBotvacApi::request($this->baseUrl.$this->serial."/messages", $payload, "POST", $headers);
+			
+			$result = NeatoBotvacApi::request($this->baseUrl.$this->serial."/messages", $payload, "POST", $headers);		
 		}
 
 		return $result;
 	}
+	
+	
+	protected function doMeta($params = false, $token = false) {
+		$result = array("message" => "no name, token or serial");
 
+		if($this->serial !== false && $params !== false && $token !== false) {
 
+			$headers = array(
+	    	"Authorization: Token token=".$token
+			);
+
+			$result = NeatoBotvacApi::request($this->metaUrl.$this->serial, $params, "PUT", $headers);
+		}
+
+		return $result;
+	}
 }

@@ -14,6 +14,7 @@ $token = false; // Token returned from authorize method
 
 $client = new NeatoBotvacClient($token);
 $robots = array();
+$event = array();
 
 $auth = $client->authorize($email, $password);
 
@@ -35,6 +36,16 @@ if($auth !== false) {
 foreach ($robots as $robot) {
 	print_r($robot->getState());
 	print_r($robot->getSchedule());
+	
+	print_r($robot->setName("ROBOT", $auth));
+		
+	// Set Schedule for Thursday and Sunday at 11:20 o'clock without eco mode 
+	// (Sunday = 0 / Monday = 1 and so on)
+	$event = array(
+		array("startTime" => "11:20", "mode" => 2, "day" => 4),
+		array("startTime" => "11:20", "mode" => 2, "day" => 0)
+	);
+	$robotClass->setSchedule($event);
 }
 
 ?>
